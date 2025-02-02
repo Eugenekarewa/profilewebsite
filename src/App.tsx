@@ -54,13 +54,14 @@ function App() {
               <User className="w-8 h-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800">About Me</h2>
             </div>
-            <p className="text-gray-600 leading-relaxed mb-8 text-lg">
-              Passionate blockchain developer with extensive experience in decentralized applications (dApps), 
-              smart contracts, and Web3 integrations. Skilled in TypeScript, Motoko, Solidity, and Rust. 
-              Experienced in building blockchain-based marketplaces, decentralized governance models, and 
-              self-sovereign applications. Adept at leveraging Internet Computer Protocol (ICP) and other 
-              blockchain frameworks to develop scalable and secure solutions.
-            </p>
+            <div className="space-y-6">
+              <p className="text-gray-600 leading-relaxed text-lg">
+                As the owner of my tech venture and a Campus Ambassador for ICP Hub Kenya, I've leveraged my Bachelor of Applied Science in Physics from Pwani University to innovate and educate. My journey intertwines cutting-edge blockchain applications with a scientific approach to problem-solving, positioning me as a bridge between complex technologies and academic communities.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                My core competencies are underpinned by technical acumen, with proficiencies in presenting, technical writing, and deploying applications. Through initiatives like inter-university hackathons and informative sessions, we've fostered a burgeoning community of learners eager to explore the potential of internet computer protocol and its vast applications.
+              </p>
+            </div>
           </div>
         </div>
       </section>
