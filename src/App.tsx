@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import TestimonialForm from './components/TestimonialForm';
 import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, Cpu } from 'lucide-react';
 
 function App() {
@@ -12,18 +13,32 @@ function App() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/90 shadow-xl transform hover:scale-105 transition-transform duration-300">
+            <div className="mb-8 relative">
+              <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/90 shadow-xl transform hover:scale-105 transition-transform duration-300 relative">
                 <img 
-                  src="https://placehold.co/400x400/667fff/ffffff?text=EK" 
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Eugene&backgroundColor=b6e3f4"
                   alt="Eugene Karewa"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              {/* Decorative Elements */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 w-64 h-64 animate-spin-slow opacity-20">
+                <svg viewBox="0 0 100 100" className="w-full h-full fill-current text-blue-400">
+                  <defs>
+                    <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                  </defs>
+                  <text fontSize="10">
+                    <textPath href="#circle">
+                      BLOCKCHAIN DEVELOPER • ICP AMBASSADOR • INNOVATOR •
+                    </textPath>
+                  </text>
+                </svg>
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow-lg">Eugene Karewa</h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-200">Blockchain Developer</p>
-            <div className="flex justify-center space-x-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow-lg animate-fade-in">Eugene Karewa</h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-200 animate-slide-up">Blockchain Developer</p>
+            <div className="flex justify-center space-x-6 animate-bounce-in">
               <a href="https://github.com/Eugenekarewa" 
                  className="text-blue-200 hover:text-white transition-colors transform hover:scale-110 duration-200"
                  target="_blank"
@@ -53,7 +68,14 @@ function App() {
               <User className="w-8 h-8 text-blue-400 mr-3" />
               <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-6 relative">
+              <div className="absolute -right-20 top-0 hidden lg:block">
+                <img 
+                  src="https://api.dicebear.com/7.x/bottts/svg?seed=Eugene&backgroundColor=b6e3f4"
+                  alt="Decorative Robot"
+                  className="w-40 h-40 animate-float"
+                />
+              </div>
               <p className="text-gray-300 leading-relaxed text-lg">
                 As the owner of my tech venture and a Campus Ambassador for ICP Hub Kenya, I've leveraged my Bachelor of Applied Science in Physics from Pwani University to innovate and educate. My journey intertwines cutting-edge blockchain applications with a scientific approach to problem-solving, positioning me as a bridge between complex technologies and academic communities.
               </p>
@@ -82,12 +104,15 @@ function App() {
                 { name: 'Web3 Integrations', skills: ['Keplr Wallet', 'ICP SDK', 'JavaScript SDK'] },
                 { name: 'Security & Governance', skills: ['DAO Structures', 'Reputation Systems', 'Transparent Voting'] }
               ].map((category, index) => (
-                <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
-                  <h3 className="text-lg font-semibold text-blue-400 mb-4">{category.name}</h3>
+                <div 
+                  key={index} 
+                  className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 group"
+                >
+                  <h3 className="text-lg font-semibold text-blue-400 mb-4 group-hover:text-blue-300 transition-colors">{category.name}</h3>
                   <ul className="space-y-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <li key={skillIndex} className="text-gray-300 flex items-center">
-                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <li key={skillIndex} className="text-gray-300 flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
                         {skill}
                       </li>
                     ))}
@@ -113,19 +138,22 @@ function App() {
                   title: 'Art Marketplace',
                   description: 'A decentralized marketplace for artists to showcase and sell digital artwork, integrating authentication, payment, and escrow services.',
                   image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&q=80&w=800&h=500',
-                  tech: ['ICP', 'React', 'Smart Contracts']
+                  tech: ['ICP', 'React', 'Smart Contracts'],
+                  github: 'https://github.com/Eugenekarewa/artwork'
                 },
                 {
                   title: 'Coffee Supply Chain System',
                   description: 'A blockchain-based system for tracking coffee beans from farms to consumers, ensuring transparency and fair trade.',
                   image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800&h=500',
-                  tech: ['Blockchain', 'Supply Chain', 'Smart Contracts']
+                  tech: ['Blockchain', 'Supply Chain', 'Smart Contracts'],
+                  github: 'https://github.com/Eugenekarewa/coffeesuplychain.git'
                 },
                 {
                   title: 'LogiTrust Kenya',
                   description: 'A logistics solution for SMEs in Kenya, leveraging AI and blockchain to optimize routes, prevent fraud, and enhance transparency.',
                   image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800&h=500',
-                  tech: ['AI', 'Blockchain', 'Logistics']
+                  tech: ['AI', 'Blockchain', 'Logistics'],
+                  github: 'https://github.com/logitrustkenya/smartlogisticskenya.git'
                 },
                 {
                   title: 'ICP Educational Programs',
@@ -134,7 +162,10 @@ function App() {
                   tech: ['Education', 'ICP', 'Technical Writing']
                 }
               ].map((project, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                <div 
+                  key={index} 
+                  className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-2"
+                >
                   <div className="relative overflow-hidden">
                     <img 
                       src={project.image} 
@@ -144,13 +175,25 @@ function App() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">{project.title}</h3>
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">{project.title}</h3>
+                      {project.github && (
+                        <a 
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-400 hover:text-blue-300 transition-colors"
+                        >
+                          <Github className="w-6 h-6" />
+                        </a>
+                      )}
+                    </div>
                     <p className="text-gray-400 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
                         <span 
                           key={techIndex}
-                          className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm font-medium group-hover:bg-blue-800/40 transition-colors"
                         >
                           {tech}
                         </span>
@@ -199,7 +242,10 @@ function App() {
                   description: 'Provided cybersecurity consulting services and implemented security solutions.'
                 }
               ].map((job, index) => (
-                <div key={index} className="border-l-4 border-blue-400 pl-6 hover:border-blue-300 transition-colors duration-300">
+                <div 
+                  key={index} 
+                  className="border-l-4 border-blue-400 pl-6 hover:border-blue-300 transition-all duration-300 transform hover:-translate-x-2"
+                >
                   <h3 className="text-xl font-semibold text-white group-hover:text-blue-400">{job.role}</h3>
                   <div className="text-blue-400 mt-1 font-medium">{job.company}</div>
                   <div className="text-gray-400 mt-1">{job.period}</div>
@@ -211,12 +257,22 @@ function App() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-800" id="testimonials">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Testimonials</h2>
+            <TestimonialForm />
+          </div>
+        </div>
+      </section>
+
       {/* Education Section */}
-      <section className="py-20 bg-gray-800" id="education">
+      <section className="py-20 bg-gray-900" id="education">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Education</h2>
-            <div className="bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
               <h3 className="text-xl font-semibold text-blue-400">Bachelor of Science in Physics</h3>
               <p className="text-gray-300 mt-2">Pwani University</p>
             </div>
@@ -225,7 +281,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-900" id="contact">
+      <section className="py-20 bg-gray-800" id="contact">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Get In Touch</h2>
