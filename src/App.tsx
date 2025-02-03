@@ -16,9 +16,9 @@ function App() {
             <div className="mb-8 relative">
               <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/90 shadow-xl transform hover:scale-105 transition-transform duration-300 relative">
                 <img 
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Eugene&backgroundColor=b6e3f4"
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Eugene&gender=male&style=circle&backgroundColor=b6e3f4&top=shortHair&hairColor=black&accessories=round&clothingColor=blue"
                   alt="Eugene Karewa"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover animate-pulse-subtle"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -71,9 +71,9 @@ function App() {
             <div className="space-y-6 relative">
               <div className="absolute -right-20 top-0 hidden lg:block">
                 <img 
-                  src="https://api.dicebear.com/7.x/bottts/svg?seed=Eugene&backgroundColor=b6e3f4"
+                  src="https://api.dicebear.com/7.x/bottts/svg?seed=Eugene&backgroundColor=b6e3f4&colors=blue"
                   alt="Decorative Robot"
-                  className="w-40 h-40 animate-float"
+                  className="w-40 h-40 animate-float-bounce"
                 />
               </div>
               <p className="text-gray-300 leading-relaxed text-lg">
